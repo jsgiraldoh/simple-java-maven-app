@@ -32,6 +32,8 @@ pipeline {
     	    steps {
         	script {
             	// Copiar el artefacto si es necesario
+		sh 'cp target/*.jar dockerfile/'
+
             	sh 'cd dockerfile/'
 
             	// Construir la imagen Docker

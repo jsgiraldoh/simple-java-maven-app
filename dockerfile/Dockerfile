@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copiar el archivo JAR al contenedor
-COPY target/* /app/my-app.jar
+COPY *.jar /app/my-app.jar
 
 # Especificar el comando para ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "/app/my-app.jar"]
