@@ -32,7 +32,7 @@ pipeline {
     	    steps {
         	script {
             	// Copiar el artefacto si es necesario
-            	sh 'cp target/my-app.jar .'
+            	sh 'cp target/*.jar .'
 
             	// Construir la imagen Docker
             	sh 'docker build -t my-app-image .'
