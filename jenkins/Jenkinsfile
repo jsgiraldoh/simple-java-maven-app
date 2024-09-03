@@ -27,12 +27,23 @@ pipeline {
             steps {
                 sh 'mvn org.owasp:dependency-check-maven:check'
             }
-            post {
-                always {
-                    dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
-                }
-            }
         }
+        stage('Build Docker Image') {
+    	    steps {
+        	script {
+            	// Copiar el artefacto si es necesario
+            	sh 'cp target/my-app.jar .'
+
+            	// Construir la imagen Docker
+            	sh 'docker build -t my-app-image .'
+
+            	// Publicar la imagen en Docker Hub
+            	//sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
+            	//sh 'docker tag my-app-image $DOCKER_USERNAME/my-app-image:latest'
+            	//sh 'docker push $DOCKER_USERNAME/my-app-image:latest'
+                }
+    	    }
+	}
         stage('Deliver') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
