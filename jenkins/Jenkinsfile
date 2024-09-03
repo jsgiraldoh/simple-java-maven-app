@@ -32,10 +32,12 @@ pipeline {
     	    steps {
         	script {
             	// Copiar el artefacto si es necesario
-            	sh 'cp target/*.jar .'
+            	sh 'cd dockerfile/'
 
             	// Construir la imagen Docker
             	sh 'docker build -t my-app-image .'
+
+		cd ..
 
             	// Publicar la imagen en Docker Hub
             	//sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
