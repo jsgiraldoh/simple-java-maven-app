@@ -31,7 +31,7 @@ services:
     restart: unless-stopped
 
   db:
-    image: postgres:15-alpine
+    image: postgres:latest
     container_name: sonarqube_db
     environment:
       - POSTGRES_USER=sonar
