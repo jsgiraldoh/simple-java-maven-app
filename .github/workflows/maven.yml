@@ -48,4 +48,7 @@ jobs:
     - name: Run Docker container
       run: |
         # arranca en background y asigna nombre para poder pararlo después
-        docker run -d --name my-app-container -p 8080:8080 my-app-image:${{ github.sha }}  
+        docker run -d --name my-app-container -p 8080:8080 my-app-image:${{ github.sha }}
+
+    - name: Show container logs
+      run: docker logs -f my-app-container
