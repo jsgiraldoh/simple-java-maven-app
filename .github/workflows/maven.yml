@@ -44,3 +44,8 @@ jobs:
 
     - name: Build Docker image
       run: docker build -f dockerfile/Dockerfile -t my-app-image:${{ github.sha }} dockerfile/
+
+    - name: Run Docker container
+      run: |
+        # arranca en background y asigna nombre para poder pararlo después
+        docker run -d --name my-app-container -p 8080:8080 my-app-image:${{ github.sha }}  
