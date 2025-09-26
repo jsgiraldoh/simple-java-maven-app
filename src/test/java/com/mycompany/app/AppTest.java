@@ -20,6 +20,6 @@ public class AppTest
     public void testAppMessage()
     {
         App app = new App();
-        assertEquals("Hello World from Github Actions!", app.getMessage());
+        assertEquals("Hello World from Github Actions 2!", app.getMessage());
     }
 }
