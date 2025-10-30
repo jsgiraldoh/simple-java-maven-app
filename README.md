@@ -21,4 +21,3 @@ the "Deliver" stage of your Pipeline.
 
 ## Elasticsearch embedded in SonarQube
 sudo sysctl -w vm.max_map_count=262144
-sysctl vm.max_map_count   # verifica que quede en 262144
