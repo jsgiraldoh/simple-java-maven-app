@@ -6,7 +6,7 @@ pipeline {
             //args '-v /root/.m2:/root/.m2'
             args '--memory=3g'
         }
-    }*/
+    }
 
     environment {
         SONAR_HOST_URL = "http://161.35.127.44:9000"      // URL de tu SonarQube
