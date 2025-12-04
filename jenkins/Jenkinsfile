@@ -17,13 +17,13 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
+        /**stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQubeServer') {  // Nombre del server configurado en Jenkins
                     sh 'mvn clean verify sonar:sonar -Ddependency-check.skip=true -Dsonar.projectKey=simple-java-maven-app -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN'
                 }
             }
-        }
+        }**/
         
         stage('Build') {
             steps {
